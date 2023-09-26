@@ -1,7 +1,7 @@
 "use client";
 import Header from "@/components/header";
-import styles from "./page.module.scss";
 import StickyCursor from "@/components/stickyCursor";
+import styles from "./page.module.scss";
 
 export default function Home() {
   return (
