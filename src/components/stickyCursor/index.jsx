@@ -1,10 +1,16 @@
 import { useEffect } from "react";
 import styles from "./style.module.scss";
-import { motion, useMotionValue } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function StickyCursor() {
   const mouse = { x: useMotionValue(0), y: useMotionValue(0) };
   const cursorSize = 20; // Same as the cursor size in scss file
+
+  const smoothOpts = { damping: 20, stiffness: 300, mass: 0.3 };
+  const smoothMouse = {
+    x: useSpring(mouse.x, smoothOpts),
+    y: useSpring(mouse.y, smoothOpts),
+  };
 
   function manageMouseMove(event) {
     const { clientX, clientY } = event;
@@ -22,7 +28,7 @@ export default function StickyCursor() {
   return (
     <motion.div
       className={styles.cursor}
-      style={{ left: mouse.x, top: mouse.y }}
+      style={{ left: smoothMouse.x, top: smoothMouse.y }}
     ></motion.div>
   );
 }
