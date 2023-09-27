@@ -4,7 +4,9 @@ import styles from "./style.module.scss";
 const Header = forwardRef(function index(_, ref) {
   return (
     <div className={styles.header}>
-      <div ref={ref} className={styles.burger}></div>
+      <div className={styles.burger}>
+        <div ref={ref} className={styles.bounds} />
+      </div>
     </div>
   );
 });
