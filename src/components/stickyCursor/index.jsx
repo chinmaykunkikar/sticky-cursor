@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 export default function StickyCursor({ stickyElement }) {
   const [hovered, setHovered] = useState(false);
 
-  const cursorSize = hovered ? 60 : 20; // Same as the cursor size in scss file
+  const cursorSize = hovered ? 72 : 32; // Same as the cursor size in scss file
 
   // For framer to recognize motiona values, we use the useMotionValue hook.
   const mouse = { x: useMotionValue(0), y: useMotionValue(0) };
@@ -61,6 +61,6 @@ export default function StickyCursor({ stickyElement }) {
       className={styles.cursor}
       style={{ left: smoothMouse.x, top: smoothMouse.y }}
       animate={{ width: cursorSize, height: cursorSize }}
-    ></motion.div>
+    />
   );
 }

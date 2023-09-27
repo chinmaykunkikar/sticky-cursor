@@ -1,8 +1,9 @@
 .cursor {
     position: fixed;
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
-    background: #222;
+    background: #eee;
+    mix-blend-mode: difference;
     pointer-events: none;
 }

@@ -2,9 +2,9 @@ import { forwardRef } from "react";
 import styles from "./style.module.scss";
 import Magnetic from "@/components/magnetic";
 
-const Header = forwardRef(function index(_, ref) {
+const Container = forwardRef(function index(_, ref) {
   return (
-    <div className={styles.header}>
+    <div className={styles.container}>
       <Magnetic>
         <div className={styles.burger}>
           <div ref={ref} className={styles.bounds} />
@@ -14,4 +14,4 @@ const Header = forwardRef(function index(_, ref) {
   );
 });
 
-export default Header;
+export default Container;
