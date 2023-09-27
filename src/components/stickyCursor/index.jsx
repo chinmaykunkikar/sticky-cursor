@@ -26,11 +26,16 @@ export default function StickyCursor({ stickyElement }) {
       // Calculate the center of the burger menu.
       const center = { x: left + width / 2, y: top + height / 2 };
 
+      // Distance between the cursor and the center of burger menu.
+      const distance = { x: clientX - center.x, y: clientY - center.y };
+
       if (hovered) {
         // Set the sticky cursor to the center of the burger
         // when the pointer is moved in the proximity of it.
-        mouse.x.set(center.x - cursorSize / 2);
-        mouse.y.set(center.y - cursorSize / 2);
+        // mouse.x.set(center.x - cursorSize / 2); (Do for y as well)
+        // Now, slightly move it towards the mouse pointer where ever it is.
+        mouse.x.set(center.x - cursorSize / 2 + distance.x * 0.1);
+        mouse.y.set(center.y - cursorSize / 2 + distance.y * 0.1);
       } else {
         // If it's not hovered, stick the cursor to the
         // pointer around the page.
