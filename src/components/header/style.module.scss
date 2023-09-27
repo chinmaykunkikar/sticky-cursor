@@ -3,25 +3,25 @@
     display: flex;
     width: 100%;
     justify-content: flex-end;
-    padding: 10px;
+    padding: 2rem;
     box-sizing: border-box;
     cursor: pointer;
     mix-blend-mode: difference;
     z-index: 1;
+    background-color: #222;
     .burger{
         position: relative;
         display: flex;
-        gap: 8px;
+        gap: 0.5rem;
         flex-direction: column;
-        padding: 30px;
-        pointer-events: none;
+        padding: 2rem;
         &::before, &::after{
             display: block;
             content: "";
-            width: 30px;
+            width: 2rem;
             height: 2px;
             mix-blend-mode: difference;
-            background-color: white;
+            background-color: #eee;
         }
     }
 }
