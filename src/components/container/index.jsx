@@ -10,6 +10,13 @@ const Container = forwardRef(function index(_, ref) {
           <div ref={ref} className={styles.bounds} />
         </div>
       </Magnetic>
+      <p className={styles.heading}>Sticky cursor</p>
+      <p className={styles.helperText}>
+        Move the cursor over and out of the menu icon to see the effect
+      </p>
+      <p className={styles.noHover}>
+        This will not work correctly on a touch-only device
+      </p>
     </div>
   );
 });
